@@ -17,10 +17,11 @@ const getProperty = async (id) => {
 }
 
 const postContactForm = async (body) => {
-    console.log(body)
     let url = new URL(`http://localhost:5000/api/v1/contact_requests`);
     const res = await fetch(url, {
-        method: 'POST', body: JSON.stringify(body), headers: {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },

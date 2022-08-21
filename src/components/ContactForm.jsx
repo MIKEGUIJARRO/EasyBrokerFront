@@ -18,7 +18,6 @@ export const ContactForm = ({ id }) => {
       source: "testMike.com",
     };
     const response = await postContactForm(body);
-    console.log(response);
   };
   return (
     <div>
