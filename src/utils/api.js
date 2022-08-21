@@ -7,8 +7,13 @@ const getProperties = async (pagination) => {
         searchParams.set(key, pagination[key]);
     }
     const res = await fetch(url)
-    console.log(url.toString())
     return res.json()
 }
 
-export { getProperties }
+const getProperty = async (id) => {
+    let url = new URL(`http://localhost:5000/api/v1/properties/${id}`);
+    const res = await fetch(url)
+    return res.json()
+}
+
+export { getProperties, getProperty }

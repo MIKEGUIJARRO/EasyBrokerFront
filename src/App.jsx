@@ -1,16 +1,26 @@
+// Libraries
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
+// Pages
 import { Home } from "./pages/Home";
+import { NotFound } from "./pages/NotFound";
+import { Property } from "./pages/Property";
 
 const queryClient = new QueryClient();
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <QueryClientProvider client={queryClient}>
-        <Home />
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/properties" element={<Home />} />
+            <Route path="/properties/:id" element={<Property />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
       </QueryClientProvider>
     </div>
   );

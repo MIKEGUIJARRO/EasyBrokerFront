@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getProperties } from "../utils/api";
 import { CardProperty } from "../components/PropertyCard";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export const PropertyGrid = () => {
   const [pagination, setPagination] = useState({
@@ -51,14 +52,16 @@ export const PropertyGrid = () => {
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data?.data?.content.map((property) => (
-          <CardProperty
-            title={property.title}
-            location={property.location}
-            publicId={property.public_id}
-            type={property.operations[0].type}
-            key={property.public_id}
-            imageThumbnail={property.title_image_full}
-          />
+          <Link to={`/properties/${property.public_id}`}>
+            <CardProperty
+              title={property.title}
+              location={property.location}
+              publicId={property.public_id}
+              type={property.operations[0].type}
+              key={property.public_id}
+              imageThumbnail={property.title_image_full}
+            />
+          </Link>
         ))}
       </div>
 
