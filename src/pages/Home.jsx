@@ -1,23 +1,17 @@
 import React from "react";
-import { CardProperty } from "../components/CardProperty";
 import { Scaffold } from "../components/Scaffold";
-
+import { PropertyGrid } from "../components/PropertyGrid";
 export const Home = () => {
   return (
     <div>
       <Scaffold>
         <div>
-          <h1 className="text-lg">Hola</h1>
-          <div>
-            <CardProperty
-              title={"Title"}
-              location={"Location"}
-              publicId={"PublicId"}
-              type={"Type"}
-              key={"PublicId"}
-              imageThumbnail={"https://picsum.photos/seed/picsum/200/300"}
-            />
+          <div className="py-12">
+            <h1 className="text-4xl font-bold">Propiedades</h1>
           </div>
+          <PropertyGrid />
+
+          <div></div>
         </div>
       </Scaffold>
     </div>
