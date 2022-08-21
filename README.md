@@ -1,4 +1,4 @@
-# EasyBroker Intern Project - Backend
+# EasyBroker Intern Project - Frontend
 This is a WebApp developed with React (Vite).
 
 
