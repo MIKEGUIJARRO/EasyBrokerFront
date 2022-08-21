@@ -10,7 +10,6 @@ export const Home = () => {
             <h1 className="text-4xl font-bold">Propiedades</h1>
           </div>
           <PropertyGrid />
-
           <div></div>
         </div>
       </Scaffold>

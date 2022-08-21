@@ -52,13 +52,15 @@ export const PropertyGrid = () => {
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data?.data?.content.map((property) => (
-          <Link to={`/properties/${property.public_id}`}>
+          <Link
+            to={`/properties/${property.public_id}`}
+            key={property.public_id}
+          >
             <CardProperty
               title={property.title}
               location={property.location}
               publicId={property.public_id}
               type={property.operations[0].type}
-              key={property.public_id}
               imageThumbnail={property.title_image_full}
             />
           </Link>
